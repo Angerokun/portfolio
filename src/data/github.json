@@ -1,0 +1,25 @@
+{
+  "repositories": [
+    {
+      "name": "QMS Controller Agent",
+      "description": "Adds Laravel QMS HTTP connectivity without queue actions.",
+      "technologies": [
+        "REST API",
+        ".NET WinForms Agent",
+        "HID Controller"
+      ],
+      "url": "https://github.com/Angerokun/qms-controller-agent",
+      "isPlaceholder": false
+    },
+    {
+      "name": "Address API",
+      "description": "Package service for Address api.",
+      "technologies": [
+        "PHP",
+        "Laravel"
+      ],
+      "url": "https://github.com/Angerokun/azamora-address",
+      "isPlaceholder": false
+    }
+  ]
+}

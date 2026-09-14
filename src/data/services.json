@@ -1,0 +1,64 @@
+{
+  "services": [
+    {
+      "title": "Custom Web Application Development",
+      "icon": "code",
+      "problem": "Need a custom internal business system?",
+      "description": "I design and develop web-based systems tailored to your organization's actual workflow — instead of forcing your process into a generic SaaS product. From inventory tracking to customer portals, I build applications that fit how your team actually works."
+    },
+    {
+      "title": "Business Management Systems",
+      "icon": "briefcase",
+      "problem": "Struggling with spreadsheets and manual processes?",
+      "description": "I build comprehensive management platforms that centralize your operations — from employee management and reporting to document generation and role-based access control. Systems designed to grow with your organization."
+    },
+    {
+      "title": "Queue Management Systems",
+      "icon": "users",
+      "problem": "Long customer wait times and chaotic service areas?",
+      "description": "I develop complete queue management solutions with kiosks, ticket generation, real-time display boards, counter management, and thermal printer integration. Designed for banks, government offices, clinics, and service centers."
+    },
+    {
+      "title": "Government & Barangay Systems",
+      "icon": "building",
+      "problem": "Need a digital solution for local government operations?",
+      "description": "I build multi-tenant systems for barangay and LGU operations — resident management, document generation, certificate issuance, and reporting. Configurable per organization without needing separate deployments."
+    },
+    {
+      "title": "REST API Development",
+      "icon": "link",
+      "problem": "Need your systems to communicate with each other?",
+      "description": "I design and build RESTful APIs that connect your frontend applications, mobile apps, and third-party services. Clean, documented, and built for reliability."
+    },
+    {
+      "title": "Cloud Deployment & DevOps",
+      "icon": "cloud",
+      "problem": "Need your application deployed and running reliably?",
+      "description": "I deploy applications on AWS using Docker, ECS, Fargate, RDS, S3, and Application Load Balancers. From local server setups to full cloud infrastructure — I handle the deployment so you can focus on your business."
+    },
+    {
+      "title": "System & Hardware Integration",
+      "icon": "cpu",
+      "problem": "Need software that works with physical devices?",
+      "description": "I integrate web applications with hardware devices — thermal printers, display controllers, kiosks, and Windows-based agents. Bridging the gap between your software systems and physical equipment."
+    },
+    {
+      "title": "Real-time Web Applications",
+      "icon": "radio",
+      "problem": "Need instant updates without page refreshes?",
+      "description": "I build real-time features using WebSockets, Laravel Echo, and Soketi — live dashboards, queue displays, notifications, and collaborative interfaces where data updates the moment it changes."
+    },
+    {
+      "title": "Business Process Automation",
+      "icon": "settings",
+      "problem": "Spending too much time on repetitive tasks?",
+      "description": "I automate business processes using Microsoft Copilot Studio, Power Automate, and custom AI solutions. From document processing to workflow automation — reducing manual effort and human error."
+    },
+    {
+      "title": "System Maintenance & Enhancement",
+      "icon": "wrench",
+      "problem": "Have an existing system that needs improvement?",
+      "description": "I maintain and enhance existing web applications — fixing bugs, improving performance, adding features, and modernizing legacy systems. You don't always need to start from scratch."
+    }
+  ]
+}

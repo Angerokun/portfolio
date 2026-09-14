@@ -1,0 +1,80 @@
+{
+  "positions": [
+    {
+      "company": "CRESS MIRAI INC.",
+      "position": "Senior Software Engineer",
+      "period": "October 2024 — Present",
+      "isPlaceholder": false,
+      "responsibilities": [
+        "Develop, maintain, and support enterprise applications for Japanese clients, including Rental, Schedule Management, and Delinquent Management systems.",
+        "Build internal solutions using Microsoft Power Platform (Copilot Studio, Dataverse, and Power Automate).",
+        "Develop Microsoft Teams Bots and Teams Tab applications integrated with Microsoft Azure services.",
+        "Design and implement cloud solutions using Azure Functions, Azure Bot Service, Microsoft Entra ID Authentication, and Azure Static Web Apps.",
+        "Collaborate with Japanese clients to analyze requirements, troubleshoot issues, and deliver technical solutions.",
+        "Lead and mentor junior developers through technical guidance, code reviews, and task coordination."
+      ],
+      "technologies": [
+        "Laravel",
+        "Vue.js",
+        "PostgreSQL",
+        "AWS",
+        "Docker",
+        "WebSockets"
+      ]
+    },
+    {
+      "company": "[Previous Company — Replace with actual employer]",
+      "position": "Senior Software Engineer, Full Stack",
+      "period": "February 2, 2022 – October 2024",
+      "isPlaceholder": false,
+      "responsibilities": [
+        "E-Government System – Local Government System, Philippines: Led system architecture and development using PHP Laravel, Docker, PostgreSQL, AWS, Microservices, Vue.js 3, JavaScript, and Node.js; implemented TDD, unit/integration testing, code reviews, CI/CD, third-party payment gateway integration, and API-driven frontend development; led and mentored software engineers and established coding standards and best practices. ",
+        "GAB Combat Sports – Government Regulatory Board Website: Managed backend architecture and database development using PHP Laravel, AWS, and MariaDB; developed frontend features using Bootstrap 5, CSS3, AJAX, and jQuery; handled API integration, code reviews, Git pull requests, API documentation, and Google Analytics integration.",
+        "AppendPay (Multisys Corporation) – Augmentation Technical Development: Developed microservice-based backend APIs using PHP Lumen, PostgreSQL, Docker, AWS, REST APIs, and TDD; integrated payment gateway and third-party microfinance services; built and deployed Docker images to AWS EC2."
+      ],
+      "technologies": [
+        "Laravel",
+        "PHP",
+        "Vue.js",
+        "MySQL",
+        "PostgreSQL",
+        "Git"
+      ]
+    },
+    {
+      "company": "Integratr Corporation",
+      "position": "Software Engineer Consultant",
+      "period": "Sept 2020 – January 2022",
+      "isPlaceholder": false,
+      "responsibilities": [
+        "Multipay (Multisys E-Commerce Platform) – Payment Gateway: Developed and maintained microservice-based backend services using PHP Lumen, PostgreSQL, Docker, AWS, RESTful APIs, and TDD; integrated billers and developed API microservices for seamless biller payment integration while implementing Test-Driven Development."
+      ],
+      "technologies": [
+        "PHP Lumen",
+        "PostgreSQL",
+        "Docker",
+        "AWS",
+        "RESTful APIs",
+        "TDD"
+      ]
+    },
+    {
+      "company": "ABC System Solutions Inc",
+      "position": "Software Engineer, Lead",
+      "period": "October 2016 – September 2020",
+      "isPlaceholder": false,
+      "responsibilities": [
+        "Mayon Machinery Rentrade Inc. – Enterprise Management System: Developed backend services and architected APIs and database structures using PHP and Laravel; built web UI/UX using Vue.js and JavaScript, improved code quality and resolved bugs, conducted pull request reviews, and led Agile development through JIRA, Scrum, sprint management, system analysis, system flow documentation, and Daily Stand-Up meetings.",
+        "SERBIS.PH – Service Provider Request Mobile Application: Developed backend services for mobile and web platforms using PHP, Laravel, and Socket.IO; integrated Google Maps and implemented real-time notifications and messaging, while building the mobile application's UI/UX using Ionic Framework and TypeScript."
+      ],
+      "technologies": [
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Socket.IO",
+        "Ionic Framework",
+        "TypeScript"
+      ]
+    }
+  ]
+}

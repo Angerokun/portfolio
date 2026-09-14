@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "icon": "layout",
+      "skills": [
+        "Vue.js",
+        "JavaScript",
+        "jQuery",
+        "Bootstrap",
+        "HTML",
+        "CSS",
+        "Fabric.js",
+        "Chart.js"
+      ]
+    },
+    {
+      "name": "Backend",
+      "icon": "server",
+      "skills": [
+        "Laravel",
+        "PHP",
+        "Java",
+        "Spring Boot",
+        "ASP.NET Core / C#"
+      ]
+    },
+    {
+      "name": "Database",
+      "icon": "database",
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "JSONB",
+        "Database Design",
+        "SQL"
+      ]
+    },
+    {
+      "name": "Cloud & Infrastructure",
+      "icon": "cloud",
+      "skills": [
+        "AWS EC2",
+        "AWS RDS",
+        "AWS S3",
+        "AWS ECR",
+        "AWS ECS",
+        "AWS Fargate",
+        "Application Load Balancer",
+        "Docker",
+        "Linux",
+        "Apache"
+      ]
+    },
+    {
+      "name": "Real-time & Communication",
+      "icon": "radio",
+      "skills": [
+        "Laravel Echo",
+        "Soketi",
+        "WebSockets",
+        "Pusher-compatible Systems"
+      ]
+    },
+    {
+      "name": "Tools & Other",
+      "icon": "tool",
+      "skills": [
+        "REST APIs",
+        "Git / GitHub",
+        "CI/CD",
+        "System Integration",
+        "Hardware Integration",
+        "Windows Applications",
+        "AI Automation",
+        "Microsoft Copilot Studio",
+        "Power Automate"
+      ]
+    }
+  ]
+}

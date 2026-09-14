@@ -1,0 +1,220 @@
+{
+  "projects": [
+    {
+      "slug": "queue-management-system",
+      "title": "Queue Management System",
+      "subtitle": "Enterprise-grade queue management platform for organizations handling customer transactions",
+      "category": "Business System",
+      "featured": true,
+      "thumbnail": "/images/projects/qms-thumb.svg",
+      "description": "A complete queue management platform designed for organizations handling high-volume customer transactions. The system manages the entire queue lifecycle — from customer arrival and ticket generation to service completion and reporting.",
+      "techStack": [
+        "Laravel", "Vue.js", "PostgreSQL", "Soketi", "Laravel Echo",
+        "WebSockets", ".NET WinForms", "AWS", "Docker"
+      ],
+      "caseStudy": {
+        "problem": "Organizations handling customer transactions — banks, government offices, utility companies, and service centers — often struggle with long wait times, chaotic service areas, and no visibility into service performance. Paper-based numbering systems don't scale, can't handle multiple transaction types, and provide no data for improving operations.",
+        "requirements": [
+          "Customer self-service kiosk for ticket generation",
+          "Support for multiple transaction types per ticket",
+          "Counter staff interface for queue management",
+          "Real-time display board for queue status",
+          "Queue calling and lifecycle management",
+          "Reporting and analytics dashboard",
+          "User management with role-based access control",
+          "Counter and window management",
+          "Thermal printer integration for ticket printing",
+          "Hardware controller integration for display devices",
+          "Real-time communication across all system components",
+          "Windows controller agent for hardware management"
+        ],
+        "solution": "I designed and developed a complete queue management platform that digitizes the entire queuing process. The system consists of multiple interconnected components — a customer-facing kiosk, staff counter interface, real-time display board, administrative dashboard, and a Windows-based hardware controller — all communicating through WebSockets for instant updates.",
+        "architecture": "The system follows a multi-component architecture: A Laravel backend serves as the central API and WebSocket event broadcaster. Vue.js powers the kiosk, counter interface, and display board as separate SPA modules. Soketi provides the WebSocket server for real-time communication. A .NET WinForms application acts as the hardware controller agent on Windows machines, managing thermal printers and display devices. PostgreSQL handles data persistence with JSONB for flexible configuration storage. The entire application stack is containerized with Docker and deployed on AWS.",
+        "architectureDiagram": [
+          { "label": "Customer Kiosk", "type": "client" },
+          { "label": "Counter Staff Interface", "type": "client" },
+          { "label": "Display Board", "type": "client" },
+          { "label": "Admin Dashboard", "type": "client" },
+          { "label": "Load Balancer (ALB)", "type": "infrastructure" },
+          { "label": "Laravel API Server", "type": "server" },
+          { "label": "Soketi WebSocket Server", "type": "server" },
+          { "label": "PostgreSQL (RDS)", "type": "database" },
+          { "label": "Windows Controller Agent (.NET)", "type": "client" },
+          { "label": "Thermal Printer / Display Hardware", "type": "hardware" }
+        ],
+        "implementation": [
+          "Built the backend API with Laravel, implementing queue state machine logic for ticket lifecycle management (created → waiting → serving → completed/cancelled/no-show)",
+          "Developed multiple Vue.js frontend modules — each optimized for its specific use case (touch-friendly kiosk, keyboard-driven counter interface, auto-scaling display board)",
+          "Implemented real-time broadcasting using Laravel Echo and Soketi, ensuring all connected clients receive instant updates when queue state changes",
+          "Designed the database schema with PostgreSQL, using JSONB columns for flexible per-organization configuration without schema changes",
+          "Built a .NET WinForms agent that runs on Windows machines to interface with thermal printers and display controller hardware via serial/USB communication",
+          "Containerized the application stack with Docker for consistent deployment across environments",
+          "Deployed to AWS using EC2, RDS, and Application Load Balancer"
+        ],
+        "challenges": [
+          "Synchronizing state across multiple client types (kiosk, counter, display) in real-time without race conditions required careful event ordering and state reconciliation",
+          "Integrating with hardware devices (thermal printers, display controllers) from a web application required building a Windows agent as a bridge between the web API and physical hardware",
+          "Handling network instability in on-premise deployments — implementing reconnection logic, offline queuing, and state recovery for WebSocket connections",
+          "Designing a flexible configuration system that allows different organizations to customize queue behavior without code changes"
+        ],
+        "result": "The system replaced manual paper-based queuing processes, providing organizations with real-time visibility into service operations. Customers receive printed tickets and can see their position on display boards. Staff manage their counters through a clean interface. Administrators have access to reports showing service times, peak hours, and staff performance metrics."
+      }
+    },
+    {
+      "slug": "barangay-management-system",
+      "title": "Barangay Management System",
+      "subtitle": "Multi-tenant platform for local government barangay operations",
+      "category": "Government System",
+      "featured": true,
+      "thumbnail": "/images/projects/bms-thumb.svg",
+      "description": "A multi-tenant business management platform designed for Philippine barangay operations — handling resident management, document generation, certificate issuance, and administrative reporting across multiple organizations with different requirements.",
+      "techStack": [
+        "Laravel", "Vue.js", "PostgreSQL", "Docker", "Local Network Deployment"
+      ],
+      "caseStudy": {
+        "problem": "Philippine barangays handle a wide range of administrative tasks — resident records, certificate issuance, document generation, blotter reports, and community management. Most barangays either rely on manual paper-based processes or use rigid off-the-shelf software that doesn't accommodate the specific needs of each barangay. Different barangays have different document formats, workflow requirements, and organizational structures.",
+        "requirements": [
+          "Resident management with comprehensive record-keeping",
+          "Barangay certificate and clearance generation",
+          "Multiple document formats configurable per barangay",
+          "Blotter and incident report management",
+          "Report generation and data export",
+          "Printing support for certificates and documents",
+          "User management with role-based access",
+          "Multi-tenant architecture supporting multiple barangays",
+          "Organization-specific configuration without separate deployments",
+          "Local network deployment capability for areas with limited internet"
+        ],
+        "solution": "I built a multi-tenant web application where each barangay operates as a separate organization within the same platform. The system provides a shared core of functionality — resident management, document generation, user management — while allowing each organization to customize document templates, certificate formats, and workflow configurations. This approach eliminates the need to maintain separate application instances for each barangay.",
+        "architecture": "The platform uses a multi-tenant architecture with organization-scoped data isolation. Laravel handles the backend with tenant-aware middleware that scopes all queries to the current organization. Vue.js provides the frontend interface. PostgreSQL stores resident data, document templates, and organization configurations. The system supports both cloud deployment and local network deployment for barangays with limited or no internet connectivity.",
+        "architectureDiagram": [
+          { "label": "Staff Workstations", "type": "client" },
+          { "label": "Local Network / Internet", "type": "infrastructure" },
+          { "label": "Laravel Application Server", "type": "server" },
+          { "label": "PostgreSQL Database", "type": "database" },
+          { "label": "Document Template Engine", "type": "server" },
+          { "label": "Printer", "type": "hardware" }
+        ],
+        "implementation": [
+          "Designed a multi-tenant database schema with organization-scoped tables and shared lookup tables",
+          "Built tenant-aware middleware in Laravel that automatically scopes all database queries to the authenticated user's organization",
+          "Created a configurable document template engine that allows different barangays to use different certificate formats without code changes",
+          "Implemented comprehensive resident management with search, filtering, and household grouping",
+          "Built certificate generation with dynamic field population from resident records",
+          "Developed a reporting module with data export capabilities",
+          "Configured the application for local network deployment using Docker, allowing barangays to run the system on a local server without internet dependency"
+        ],
+        "challenges": [
+          "Designing a multi-tenant system that isolates data between organizations while sharing the application codebase and infrastructure",
+          "Accommodating wildly different document formats across barangays — each barangay has its own certificate layout, content, and required fields",
+          "Supporting local network deployment in environments where internet connectivity is unreliable or unavailable",
+          "Building a system flexible enough to handle the varying administrative requirements of different barangays without becoming overly complex"
+        ],
+        "result": "The platform enables multiple barangays to digitize their operations using a single shared system. Each barangay gets its own configured environment with custom document templates and settings. The multi-tenant approach significantly reduces deployment and maintenance costs compared to running separate systems for each barangay."
+      }
+    },
+    {
+      "slug": "ai-business-automation",
+      "title": "AI & Business Automation",
+      "subtitle": "Intelligent automation solutions using Microsoft Copilot Studio and Power Automate",
+      "category": "AI & Automation",
+      "featured": true,
+      "thumbnail": "/images/projects/ai-thumb.svg",
+      "description": "Business process automation solutions leveraging Microsoft Copilot Studio, Power Automate, and AI-assisted workflows to reduce manual effort, improve accuracy, and accelerate repetitive business tasks.",
+      "techStack": [
+        "Microsoft Copilot Studio", "Power Automate", "SharePoint",
+        "Google Sheets", "AI Assistants", "Knowledge Bases"
+      ],
+      "caseStudy": {
+        "problem": "Many organizations spend significant time on repetitive, manual processes — answering common questions, processing documents, routing requests, and maintaining data across multiple platforms. Employees spend hours on tasks that could be automated, leading to slower response times, inconsistent outputs, and reduced productivity.",
+        "requirements": [
+          "AI-powered assistant for answering common organizational questions",
+          "Integration with company knowledge bases and documentation",
+          "Automated workflows for routine business processes",
+          "Connection between SharePoint, Google Sheets, and other platforms",
+          "Reduced manual data entry and document processing",
+          "Easy-to-maintain automation flows for non-technical staff"
+        ],
+        "solution": "I developed AI-assisted automation solutions using Microsoft Copilot Studio to create intelligent assistants that can answer organizational questions using company knowledge bases. Combined with Power Automate workflows, routine tasks like data synchronization, notification routing, and document processing are handled automatically — reducing manual workload and improving consistency.",
+        "architecture": "The automation architecture centers on Microsoft Copilot Studio for conversational AI, connected to organizational knowledge bases in SharePoint and document libraries. Power Automate handles workflow orchestration — triggering actions based on events, syncing data between platforms (SharePoint ↔ Google Sheets), and routing notifications. The AI assistant uses company-specific knowledge to provide accurate, contextual responses rather than generic answers.",
+        "architectureDiagram": [
+          { "label": "Users / Employees", "type": "client" },
+          { "label": "Microsoft Copilot Studio", "type": "server" },
+          { "label": "Company Knowledge Base", "type": "database" },
+          { "label": "Power Automate", "type": "server" },
+          { "label": "SharePoint / Google Sheets", "type": "database" },
+          { "label": "Notifications / Actions", "type": "client" }
+        ],
+        "implementation": [
+          "Built conversational AI assistants using Microsoft Copilot Studio, trained on company-specific knowledge bases",
+          "Configured knowledge base ingestion from SharePoint document libraries and internal documentation",
+          "Designed Power Automate flows for automated data synchronization between platforms",
+          "Created automated notification and routing workflows triggered by specific business events",
+          "Implemented data validation and transformation logic within automation flows",
+          "Set up monitoring and error handling for automated processes"
+        ],
+        "challenges": [
+          "Ensuring AI responses are accurate and grounded in company-specific knowledge rather than generating hallucinated information",
+          "Designing automation flows that are maintainable by non-technical staff after handover",
+          "Handling edge cases in automated workflows where human intervention is still required",
+          "Integrating multiple platforms with different APIs and data formats into cohesive automation pipelines"
+        ],
+        "result": "The automation solutions reduced time spent on repetitive tasks, improved response consistency for common inquiries, and enabled smoother data flow between organizational platforms. Staff can focus on higher-value work while routine processes run automatically."
+      }
+    },
+    {
+      "slug": "cloud-architecture-deployment",
+      "title": "Cloud Architecture & Deployment",
+      "subtitle": "Production-grade AWS infrastructure design and Docker-based deployment",
+      "category": "Cloud & DevOps",
+      "featured": true,
+      "thumbnail": "/images/projects/cloud-thumb.svg",
+      "description": "Designing and implementing cloud infrastructure on AWS for production web applications — using EC2, RDS, S3, ECR, ECS, Fargate, Application Load Balancers, and Docker to create scalable, reliable deployment architectures.",
+      "techStack": [
+        "AWS EC2", "AWS RDS", "AWS S3", "AWS ECR", "AWS ECS",
+        "AWS Fargate", "Application Load Balancer", "Docker", "Linux"
+      ],
+      "caseStudy": {
+        "problem": "Web applications need reliable, scalable infrastructure to run in production. Many teams deploy applications to single servers with no redundancy, no containerization, and no clear deployment pipeline — resulting in downtime during updates, difficulty scaling, and inconsistent environments between development and production.",
+        "requirements": [
+          "Containerized application deployment with Docker",
+          "Managed database service for reliability and backups",
+          "Object storage for file uploads and static assets",
+          "Load balancing for high availability",
+          "Container orchestration for scaling and updates",
+          "Consistent deployment pipeline from development to production",
+          "SSL/TLS termination",
+          "Monitoring and logging"
+        ],
+        "solution": "I designed and deployed cloud infrastructure on AWS using a containerized architecture. Applications are packaged as Docker containers, stored in ECR, and orchestrated by ECS with Fargate for serverless container execution. An Application Load Balancer distributes traffic and handles SSL termination. RDS provides managed PostgreSQL databases with automated backups. S3 handles file storage.",
+        "architecture": "The production architecture follows AWS best practices: Users connect through an Application Load Balancer that handles SSL termination and distributes traffic to ECS Fargate tasks running the Docker containers. The containers pull their images from ECR. The application connects to RDS PostgreSQL for database operations and S3 for file storage. All components are deployed within a VPC with proper security group configurations.",
+        "architectureDiagram": [
+          { "label": "Users", "type": "client" },
+          { "label": "Application Load Balancer (ALB)", "type": "infrastructure" },
+          { "label": "ECS Fargate (Docker Containers)", "type": "server" },
+          { "label": "ECR (Container Registry)", "type": "infrastructure" },
+          { "label": "RDS PostgreSQL", "type": "database" },
+          { "label": "S3 (File Storage)", "type": "database" },
+          { "label": "Real-time Services (Soketi)", "type": "server" }
+        ],
+        "implementation": [
+          "Created Dockerfiles optimized for Laravel applications with multi-stage builds to minimize image size",
+          "Configured ECS task definitions and services with health checks and auto-restart policies",
+          "Set up ECR repositories for Docker image storage with lifecycle policies",
+          "Deployed RDS PostgreSQL instances with automated backups and encryption",
+          "Configured S3 buckets for file uploads with appropriate IAM policies",
+          "Set up Application Load Balancer with target groups, health checks, and SSL certificate management via ACM",
+          "Implemented security groups and VPC configuration to isolate database and application tiers",
+          "Created deployment workflows for building, pushing, and updating container images"
+        ],
+        "challenges": [
+          "Optimizing Docker images for fast builds and small footprint while including all required PHP extensions and dependencies",
+          "Configuring ECS service networking to allow containers to communicate with RDS, S3, and WebSocket servers within the VPC",
+          "Managing environment variables and secrets across different deployment environments without exposing sensitive values",
+          "Handling zero-downtime deployments with ECS rolling updates and health check grace periods"
+        ],
+        "result": "Applications run on a reliable, scalable cloud infrastructure with automated backups, containerized deployment, and load balancing. Deployments are consistent and repeatable. The infrastructure can scale to handle increased traffic without manual intervention."
+      }
+    }
+  ]
+}
